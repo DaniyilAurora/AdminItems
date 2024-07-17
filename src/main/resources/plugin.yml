@@ -2,3 +2,6 @@ name: AdminItems
 version: '${project.version}'
 main: net.daniyil.adminitems.AdminItems
 api-version: '1.20'
+
+commands:
+  adminitems:
