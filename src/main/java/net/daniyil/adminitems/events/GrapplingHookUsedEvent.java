@@ -14,7 +14,7 @@ public class GrapplingHookUsedEvent implements Listener {
 
         if (p.getItemInHand().equals(GrapplingHookItem.getItem())) {
             if (e.getState().equals(PlayerFishEvent.State.REEL_IN)) {
-                Vector move = p.getLocation().subtract(e.getHook().getLocation()).toVector();
+                Vector move = e.getHook().getLocation().subtract(p.getLocation()).toVector();
                 p.setVelocity(move.multiply(0.3));
             }
         }
