@@ -1,6 +1,7 @@
 package net.daniyil.adminitems;
 
 import net.daniyil.adminitems.commands.AdminItemsCommand;
+import net.daniyil.adminitems.events.GrapplingHookUsedEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AdminItems extends JavaPlugin {
@@ -12,6 +13,7 @@ public final class AdminItems extends JavaPlugin {
         plugin = this;
 
         getCommand("adminitems").setExecutor(new AdminItemsCommand());
+        getServer().getPluginManager().registerEvents(new GrapplingHookUsedEvent(), this);
     }
 
     @Override
