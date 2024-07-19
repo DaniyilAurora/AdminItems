@@ -16,18 +16,18 @@ public class AdminItemsCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (commandSender instanceof Player) {
-            Player p = (Player) commandSender;
+            Player player = (Player) commandSender;
 
             if (commandSender.hasPermission(config.getString("admin-permission"))) {
-                p.openInventory(AdminItemsGui.getGui());
-                p.sendMessage(Utils.changeColors("&aOpened AdminItems GUI."));
+                player.openInventory(AdminItemsGui.getGui());
+                player.sendMessage(Utils.applyColors("&aOpened AdminItems GUI."));
             }
             else {
-                p.sendMessage(Utils.changeColors("&cYou don't have permission to use this command."));
+                player.sendMessage(Utils.applyColors("&cYou don't have permission to use this command."));
             }
         }
         else {
-            commandSender.sendMessage(Utils.changeColors("&cYou need to be player to execute this command."));
+            commandSender.sendMessage(Utils.applyColors("&cYou need to be player to execute this command."));
         }
 
         return false;

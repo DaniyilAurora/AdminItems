@@ -10,12 +10,12 @@ import org.bukkit.util.Vector;
 public class GrapplingHookUsedEvent implements Listener {
     @EventHandler
     public void onGrapplingHookUse(PlayerFishEvent e) {
-        Player p = e.getPlayer();
+        Player player = e.getPlayer();
 
-        if (p.getItemInHand().equals(GrapplingHookItem.getItem())) {
+        if (player.getItemInHand().equals(GrapplingHookItem.getItem())) {
             if (e.getState().equals(PlayerFishEvent.State.REEL_IN)) {
-                Vector move = e.getHook().getLocation().subtract(p.getLocation()).toVector();
-                p.setVelocity(move.multiply(0.3));
+                Vector move = e.getHook().getLocation().subtract(player.getLocation()).toVector();
+                player.setVelocity(move.multiply(0.3));
             }
         }
     }

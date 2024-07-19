@@ -12,9 +12,9 @@ public class GrapplingHookItem {
     private static ItemMeta itemMeta = item.getItemMeta();
 
     public static ItemStack getItem() {
-        itemMeta.setDisplayName(Utils.changeColors("&aGrappling hook"));
+        itemMeta.setDisplayName(Utils.applyColors("&aGrappling hook"));
         ArrayList<String> itemLore = new ArrayList<String>();
-        itemLore.add(Utils.changeColors("&7Using this item you can jump really high!"));
+        itemLore.add(Utils.applyColors("&7Using this item you can jump really high!"));
         itemMeta.setLore(itemLore);
         itemMeta.setUnbreakable(true);
         item.setItemMeta(itemMeta);
