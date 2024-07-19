@@ -2,6 +2,7 @@ package net.daniyil.adminitems;
 
 import net.daniyil.adminitems.commands.AdminItemsCommand;
 import net.daniyil.adminitems.events.GrapplingHookUsedEvent;
+import net.daniyil.adminitems.events.TNTStickClickEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class AdminItems extends JavaPlugin {
@@ -14,6 +15,7 @@ public final class AdminItems extends JavaPlugin {
 
         getCommand("adminitems").setExecutor(new AdminItemsCommand());
         getServer().getPluginManager().registerEvents(new GrapplingHookUsedEvent(), this);
+        getServer().getPluginManager().registerEvents(new TNTStickClickEvent(), this);
     }
 
     @Override

@@ -8,6 +8,7 @@ public class AdminItemsGui {
 
     public static Inventory getGui() {
         gui.setItem(12, GrapplingHookItem.getItem());
+        gui.setItem(13, TntStickItem.getItem());
 
         return gui;
     }
